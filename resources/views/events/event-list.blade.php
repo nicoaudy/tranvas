@@ -9,10 +9,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-heading">{{ $upcoming->title }}</h3>
-                    <small>{{ $upcoming->address }}</small>
+                    <small class="padding-left-20">{{ $upcoming->address }}</small>
                 </div>
                 <div class="panel-body">
-                    <div class="meta-data">
+                    <div class="meta-data margin-bottom-20">
                         <strong>Start Date:</strong> {{ $upcoming->start_date }}
                         <br>
                         <strong>End Date:</strong> {{ $upcoming->end_date }}
@@ -36,10 +36,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-heading">{{ $past->title }}</h3>
-                    <small>{{ $past->address }}</small>
+                    <small class="padding-left-20">{{ $past->address }}</small>
                 </div>
                 <div class="panel-body">
-                    <div class="meta-data">
+                    <div class="meta-data margin-bottom-20">
                         <strong>Start Date:</strong> {{ $past->start_date }}
                         <br>
                         <strong>End Date:</strong> {{ $past->end_date }}
