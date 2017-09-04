@@ -8,10 +8,12 @@
     @yield('header-style')
 </head>
 <body>
+    @include('partials.menu')
     <div class="container">
         @yield('content')
     </div>
 
+    <script src="js/app.js"></script>
     @stack('footer-script')
 </body>
 </html>
