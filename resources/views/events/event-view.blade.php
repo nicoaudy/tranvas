@@ -1,5 +1,14 @@
 @extends('layouts')
 
+@section('header-style')
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+@stop
+
 @section('content')
 <div class="row">
     <div class="col-md-8 col-sm-push-2">
@@ -38,4 +47,24 @@
         </div>
     </div>
 </div>
-@endsection
+@stop
+
+@push('footer-script')
+    <script>
+        function initMap() {
+            var uluru   = { lat: {{ $event->lat }}, lng: {{ $event->long }} };
+            var map     = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+            });
+
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_API_KEY') }}&callback=initMap">
+    </script>
+@endpush
