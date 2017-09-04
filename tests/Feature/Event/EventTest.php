@@ -36,4 +36,14 @@ class EventTest extends TestCase
         ->assertSeeText($event->title)
         ->assertSeeText($event->description);
     }
+
+    /** @test */
+    public function a_user_can_view_event_details()
+    {
+        $event = factory(Event::class)->create();
+
+        $this->actingAs($this->user)->get(route('event.view', $event->id))
+        ->assertSeeText($event->title)
+        ->assertSeeText($event->creator->name);
+    }
 }
