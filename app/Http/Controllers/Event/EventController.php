@@ -17,4 +17,9 @@ class EventController extends Controller
         $pastEvents     = Event::where('end_date', '<', $today)->orderBy('start_date', 'desc')->limit(3)->get();
         return view('events.event-list', compact('upcomingEvents', 'pastEvents'));
     }
+
+    public function view(Event $event)
+    {
+        return view('events.event-view')->withEvent($event);
+    }
 }

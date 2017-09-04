@@ -8,7 +8,9 @@
         @foreach($upcomingEvents as $upcoming)
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-heading">{{ $upcoming->title }}</h3>
+                    <h3 class="panel-heading">
+                        <a href="{{ route('event.view', $upcoming->id) }}">{{ $upcoming->title }}</a>
+                    </h3>
                     <small class="padding-left-20">{{ $upcoming->address }}</small>
                 </div>
                 <div class="panel-body">
@@ -35,7 +37,9 @@
         @forelse($pastEvents as $past)
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-heading">{{ $past->title }}</h3>
+                    <h3 class="panel-heading">
+                        <a href="{{ route('event.view', $past->id) }}">{{ $past->title }}</a>
+                    </h3>
                     <small class="padding-left-20">{{ $past->address }}</small>
                 </div>
                 <div class="panel-body">
