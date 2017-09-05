@@ -7,15 +7,22 @@ use App\Modules\Event\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Modules\Event\Repositories\EventsRepository;
 
 class EventController extends Controller
 {
+    protected $events;
+
+    public function __construct(EventsRepository $eventsRepository)
+    {
+        $this->events = $eventsRepository;
+    }
+
+
     public function index()
     {
-        $today = Carbon::today()->format('Y-m-d');
-
-        $upcomingEvents = Event::where('end_date', '>', $today)->orderBy('start_date', 'desc')->get();
-        $pastEvents     = Event::where('end_date', '<', $today)->orderBy('start_date', 'desc')->limit(3)->get();
+        $upcomingEvents = $this->events->getUpcomingEvents();
+        $pastEvents     = $this->events->getPastEvents();
         return view('events.event-list', compact('upcomingEvents', 'pastEvents'));
     }
 
