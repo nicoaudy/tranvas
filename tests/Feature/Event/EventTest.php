@@ -65,6 +65,8 @@ class EventTest extends TestCase
         ];
 
         $this->actingAs($this->user)->post(route('event.save'), $postData)->assertRedirect('events');
+
+        $this->get(route('events'))->assertSee($title);
     }
 
     /** @test */
