@@ -22,4 +22,14 @@ class EventController extends Controller
     {
         return view('events.event-view')->withEvent($event);
     }
+
+    public function add()
+    {
+        return view('events.event-add');
+    }
+
+    public function store(Request $request)
+    {
+        # code...
+    }
 }
