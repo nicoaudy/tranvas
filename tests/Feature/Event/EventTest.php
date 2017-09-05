@@ -34,7 +34,7 @@ class EventTest extends TestCase
         $this->actingAs($this->user)->get(route('events'))
         ->assertStatus(200)
         ->assertSeeText($event->title)
-        ->assertSeeText($event->description);
+        ->assertSeeText(limit_words($event->description, 50));
     }
 
     /** @test */
@@ -42,7 +42,7 @@ class EventTest extends TestCase
     {
         $event = factory(Event::class)->create();
 
-        $this->actingAs($this->user)->get(route('event.view', $event->id))
+        $this->actingAs($this->user)->get(route('event.view', $event->slug))
         ->assertSeeText($event->title)
         ->assertSeeText($event->creator->name);
     }
