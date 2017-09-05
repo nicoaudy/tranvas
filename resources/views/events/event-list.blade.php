@@ -3,7 +3,12 @@
 @section('content')
 <div class="row">
     <div class="col-md-8 col-sm-push-2">
-        <h1>Upcoming Events</h1>
+        <h1>
+            Upcoming Events
+            <div class="pull-right">
+                <a href="{{ route('event.add') }}" class="btn btn-success">Add event</a>
+            </div>
+        </h1>
 
         @foreach($upcomingEvents as $upcoming)
             <div class="panel panel-default">
