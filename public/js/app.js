@@ -49467,8 +49467,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        setPlace: function setPlace() {},
-        markerDrag: function markerDrag(position) {}
+        setPlace: function setPlace(place) {
+            this.location = {
+                lat: place.geometry.location.lat(),
+                lng: place.geometry.location.lng()
+            };
+        },
+        markerDrag: function markerDrag(position) {
+            this.location = {
+                lat: position.lat(),
+                lng: position.lng()
+            };
+        }
     }
 });
 

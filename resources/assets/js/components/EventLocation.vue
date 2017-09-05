@@ -33,11 +33,17 @@ export default {
         }
     },
     methods: {
-        setPlace() {
-
+        setPlace(place) {
+            this.location = {
+                lat: place.geometry.location.lat(),
+                lng: place.geometry.location.lng()
+            }
         },
         markerDrag(position) {
-
+            this.location = {
+                lat: position.lat(),
+                lng: position.lng()
+            }
         }
     }
 }
