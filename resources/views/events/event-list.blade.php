@@ -24,7 +24,7 @@
                         <strong>Created By:</strong> {{ $upcoming->creator->name }}
                     </div>
                     <div class="description">
-                        <p>{!! $upcoming->description !!}</p>
+                        <p>{!! limit_words($upcoming->description, 50) !!}</p>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                         <strong>Created By:</strong> {{ $past->creator->name }}
                     </div>
                     <div class="description">
-                        <p>{!! $past->description !!}</p>
+                        <p>{!! limit_words($past->description, 50) !!}</p>
                     </div>
                 </div>
             </div>
