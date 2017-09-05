@@ -66,4 +66,12 @@ class EventTest extends TestCase
 
         $this->actingAs($this->user)->post(route('event.save'), $postData)->assertRedirect('events');
     }
+
+    /** @test */
+    public function confirm_fields_are_required_to_create_event()
+    {
+        $this->actingAs($this->user)->post(route('event.save'), [])->assertSessionHasErrors([
+            'title', 'description', 'address', 'start_date', 'end_date', 'lat', 'lng'
+        ]);
+    }
 }
