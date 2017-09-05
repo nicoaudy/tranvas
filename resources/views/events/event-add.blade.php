@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <span class="error">{{ $errors->first('lat') }}</span>
                         <span class="error">{{ $errors->first('long') }}</span>
-                        {{-- <event-location></event-location>   --}}
+                        <event-location></event-location>  
                     </div>
                 </div>
             </div>
