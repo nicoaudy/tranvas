@@ -52,7 +52,7 @@
 @push('footer-script')
     <script>
         function initMap() {
-            var uluru   = { lat: {{ $event->lat }}, lng: {{ $event->long }} };
+            var uluru   = { lat: {{ $event->lat }}, lng: {{ $event->lng }} };
             var map     = new google.maps.Map(document.getElementById('map'), {
                 zoom: 4,
                 center: uluru

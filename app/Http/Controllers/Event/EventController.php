@@ -38,7 +38,7 @@ class EventController extends Controller
             'end_date'      => 'required',
             'description'   => 'required',
             'lat'           => 'required',
-            'long'          => 'required',
+            'lng'          => 'required',
         ]);
 
         Auth::user()->events()->create($valid);
