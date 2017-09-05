@@ -9,7 +9,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-heading">
-                        <a href="{{ route('event.view', $upcoming->id) }}">{{ $upcoming->title }}</a>
+                        <a href="{{ route('event.view', $upcoming->id) }}">
+                            #{{ $upcoming->id }} - {{ $upcoming->title }}
+                        </a>
                     </h3>
                     <small class="padding-left-20">{{ $upcoming->address }}</small>
                 </div>
@@ -22,7 +24,7 @@
                         <strong>Created By:</strong> {{ $upcoming->creator->name }}
                     </div>
                     <div class="description">
-                        <p>{{ $upcoming->description }}</p>
+                        <p>{!! $upcoming->description !!}</p>
                     </div>
                 </div>
             </div>
@@ -51,7 +53,7 @@
                         <strong>Created By:</strong> {{ $past->creator->name }}
                     </div>
                     <div class="description">
-                        <p>{{ $past->description }}</p>
+                        <p>{!! $past->description !!}</p>
                     </div>
                 </div>
             </div>

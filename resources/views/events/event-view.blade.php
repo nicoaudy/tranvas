@@ -18,7 +18,7 @@
             </div>
             <div class="panel-body">
                 <p><strong>Description:</strong></p>
-                {{ $event->description }}
+                {!! $event->description !!}
             </div>
 
             <div id="map"></div>
