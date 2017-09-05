@@ -57,3 +57,9 @@
 </form>
 @stop
 
+@push('footer-script')
+    <script src="//cdn.ckeditor.com/4.7.2/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('description');
+    </script>
+@endpush
