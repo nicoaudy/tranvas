@@ -3,6 +3,7 @@
 namespace Tests\Feature\Event;
 
 use App\User;
+use Faker\Factory;
 use Tests\TestCase;
 use App\Modules\Event\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -45,5 +46,24 @@ class EventTest extends TestCase
         $this->actingAs($this->user)->get(route('event.view', $event->slug))
         ->assertSeeText($event->title)
         ->assertSeeText($event->creator->name);
+    }
+
+    /** @test */
+    public function a_user_can_create_an_event_and_view_it()
+    {
+        $faker = Factory::create();
+        $title = $faker->sentence(3);
+
+        $postData = [
+            'title'         => $title,
+            'description'   => $faker->paragraph(3),
+            'address'       => $faker->address,
+            'start_date'    => $faker->dateTime,
+            'end_date'      => $faker->dateTime,
+            'lat'           => $faker->latitude,
+            'lng'           => $faker->longitude,
+        ];
+
+        $this->actingAs($this->user)->post(route('event.save'), $postData)->assertRedirect('events');
     }
 }

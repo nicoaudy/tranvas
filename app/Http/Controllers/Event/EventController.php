@@ -40,8 +40,9 @@ class EventController extends Controller
             'lat'           => 'required',
             'lng'          => 'required',
         ]);
+        $valid['slug']  = str_slug($valid['title']);
 
         Auth::user()->events()->create($valid);
-        return redirect()->back();
+        return redirect()->route('events');
     }
 }
