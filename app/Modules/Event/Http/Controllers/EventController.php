@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Event;
+namespace App\Modules\Event\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Modules\Event\Event;
