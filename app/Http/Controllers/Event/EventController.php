@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Modules\Event\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -30,6 +31,17 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
-        # code...
+        $valid = $this->validate($request, [
+            'title'         => 'required',
+            'address'       => 'required',
+            'start_date'    => 'required',
+            'end_date'      => 'required',
+            'description'   => 'required',
+            'lat'           => 'required',
+            'long'          => 'required',
+        ]);
+
+        Auth::user()->events()->create($valid);
+        return redirect()->back();
     }
 }
