@@ -36,7 +36,7 @@
                         @if($upcoming->user === null)
                             <button class="btn btn-primary">Register</button>
                         @else
-                            <button class="btn btn-success">De-register</button>
+                            <button class="btn btn-success">Unregister</button>
                         @endif
                     </div>
                 </div>
