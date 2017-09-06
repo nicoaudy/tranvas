@@ -20045,7 +20045,7 @@ exports.default = function (input) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(55);
-module.exports = __webpack_require__(163);
+module.exports = __webpack_require__(164);
 
 
 /***/ }),
@@ -49587,7 +49587,7 @@ var Component = __webpack_require__(10)(
   /* script */
   __webpack_require__(161),
   /* template */
-  __webpack_require__(162),
+  __webpack_require__(163),
   /* styles */
   null,
   /* scopeId */
@@ -49624,6 +49624,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__env_js__ = __webpack_require__(162);
 //
 //
 //
@@ -49631,12 +49632,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-	props: ['text', 'mode', 'eventId']
+	props: ['text', 'mode', 'eventId'],
+
+	methods: {
+		handleRegistration: function handleRegistration() {
+			var postData = {
+				eventId: this.eventId
+			};
+			axios.post(__WEBPACK_IMPORTED_MODULE_0__env_js__["a" /* registrationUrl */], postData).then(function (response) {
+				console.log(response);
+			});
+		}
+	}
 });
 
 /***/ }),
 /* 162 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export apiDomain */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return registrationUrl; });
+var apiDomain = window.Laravel.basePath;
+
+var registrationUrl = apiDomain + '/api/v1/handleRegistration';
+
+/***/ }),
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -49644,7 +49669,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "EventRegistration__wrapper"
   }, [_c('button', {
     staticClass: "btn",
-    class: _vm.mode
+    class: _vm.mode,
+    on: {
+      "click": _vm.handleRegistration
+    }
   }, [_vm._v(_vm._s(_vm.text))])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
@@ -49656,7 +49684,7 @@ if (false) {
 }
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
