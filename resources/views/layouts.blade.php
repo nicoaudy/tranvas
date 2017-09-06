@@ -6,6 +6,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Tranvas</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <script>
+        window.Laravel = {
+            csrfToken: '{{ csrf_token() }}',
+            basePath: '{{ url('/') }}'
+        }
+    </script>
     @yield('header-style')
 </head>
 <body>

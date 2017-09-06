@@ -7,7 +7,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
-    $eventController = '\App\Modules\Event\Http\Controllers\EventController';
+    $eventController = '\App\Modules\Event\Http\Controllers\EventsController';
 
     Route::get('events', "{$eventController}@index")->name('events');
     Route::get('events/add', "{$eventController}@add")->name('event.add');
