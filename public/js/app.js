@@ -49635,18 +49635,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	props: ['text', 'mode', 'eventId'],
+  props: ['text', 'mode', 'eventId'],
 
-	methods: {
-		handleRegistration: function handleRegistration() {
-			var postData = {
-				eventId: this.eventId
-			};
-			axios.post(__WEBPACK_IMPORTED_MODULE_0__env_js__["a" /* registrationUrl */], postData).then(function (response) {
-				console.log(response);
-			});
-		}
-	}
+  methods: {
+    handleRegistration: function handleRegistration() {
+      var postData = {
+        eventId: this.eventId
+      };
+      axios.post(__WEBPACK_IMPORTED_MODULE_0__env_js__["a" /* registrationUrl */], postData).then(function (response) {
+        console.log('response', response);
+      });
+    }
+  }
 });
 
 /***/ }),
