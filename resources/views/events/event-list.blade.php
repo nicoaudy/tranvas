@@ -33,16 +33,14 @@
                     </div>
                     <div class="button-container">
                         @if($upcoming->user === null)
-                            <button class="btn btn-primary">Register</button>
                             <event-registration text="Register" 
                                                 mode="btn-primary" 
-                                                eventId="{{ $upcoming->id }}">
+                                                event-id="{{ $upcoming->id }}">
                             </event-registration>
                         @else
-                            <button class="btn btn-success">Unregister</button>
                             <event-registration text="Unregister" 
                                                 mode="btn-success" 
-                                                eventId="{{ $upcoming->id }}">
+                                                event-id="{{ $upcoming->id }}">
                             </event-registration>
                         @endif
                     </div>
