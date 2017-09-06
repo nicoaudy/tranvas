@@ -32,6 +32,13 @@
                     <div class="description">
                         <p>{!! limit_words($upcoming->description, 50) !!}</p>
                     </div>
+                    <div class="button-container">
+                        @if($upcoming->user === null)
+                            <button class="btn btn-primary">Register</button>
+                        @else
+                            <button class="btn btn-success">De-register</button>
+                        @endif
+                    </div>
                 </div>
             </div>
         @endforeach
