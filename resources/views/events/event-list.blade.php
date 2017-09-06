@@ -11,7 +11,6 @@
         </h1>
 
         @foreach($upcomingEvents as $upcoming)
-            {{ dump($upcoming->toArray()) }}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-heading">
@@ -35,8 +34,10 @@
                     <div class="button-container">
                         @if($upcoming->user === null)
                             <button class="btn btn-primary">Register</button>
+                            <event-registration></event-registration>
                         @else
                             <button class="btn btn-success">Unregister</button>
+                            <event-registration></event-registration>
                         @endif
                     </div>
                 </div>

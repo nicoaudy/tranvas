@@ -17747,16 +17747,6 @@ exports.default = {
 
 /***/ }),
 /* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(21);
-module.exports = function(it){
-  if(!isObject(it))throw TypeError(it + ' is not an object!');
-  return it;
-};
-
-/***/ }),
-/* 11 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -17851,6 +17841,16 @@ module.exports = function normalizeComponent (
   }
 }
 
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(21);
+module.exports = function(it){
+  if(!isObject(it))throw TypeError(it + ' is not an object!');
+  return it;
+};
 
 /***/ }),
 /* 12 */
@@ -20045,7 +20045,7 @@ exports.default = function (input) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(55);
-module.exports = __webpack_require__(160);
+module.exports = __webpack_require__(163);
 
 
 /***/ }),
@@ -20083,6 +20083,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
 
 Vue.component('example', __webpack_require__(154));
 Vue.component('event-location', __webpack_require__(157));
+Vue.component('event-registration', __webpack_require__(160));
 
 var app = new Vue({
   el: '#app'
@@ -44015,7 +44016,7 @@ var $              = __webpack_require__(3)
   , $names         = __webpack_require__(92)
   , enumKeys       = __webpack_require__(93)
   , isArray        = __webpack_require__(94)
-  , anObject       = __webpack_require__(10)
+  , anObject       = __webpack_require__(11)
   , toIObject      = __webpack_require__(20)
   , createDesc     = __webpack_require__(31)
   , getDesc        = $.getDesc
@@ -44423,7 +44424,7 @@ var $          = __webpack_require__(3)
   , classof    = __webpack_require__(35)
   , $export    = __webpack_require__(17)
   , isObject   = __webpack_require__(21)
-  , anObject   = __webpack_require__(10)
+  , anObject   = __webpack_require__(11)
   , aFunction  = __webpack_require__(26)
   , strictNew  = __webpack_require__(102)
   , forOf      = __webpack_require__(103)
@@ -44725,7 +44726,7 @@ module.exports = function(it, Constructor, name){
 var ctx         = __webpack_require__(14)
   , call        = __webpack_require__(104)
   , isArrayIter = __webpack_require__(105)
-  , anObject    = __webpack_require__(10)
+  , anObject    = __webpack_require__(11)
   , toLength    = __webpack_require__(106)
   , getIterFn   = __webpack_require__(49);
 module.exports = function(iterable, entries, fn, that){
@@ -44747,7 +44748,7 @@ module.exports = function(iterable, entries, fn, that){
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
-var anObject = __webpack_require__(10);
+var anObject = __webpack_require__(11);
 module.exports = function(iterator, fn, value, entries){
   try {
     return entries ? fn(anObject(value)[0], value[1]) : fn(value);
@@ -44791,7 +44792,7 @@ module.exports = function(it){
 /* eslint-disable no-proto */
 var getDesc  = __webpack_require__(3).getDesc
   , isObject = __webpack_require__(21)
-  , anObject = __webpack_require__(10);
+  , anObject = __webpack_require__(11);
 var check = function(O, proto){
   anObject(O);
   if(!isObject(proto) && proto !== null)throw TypeError(proto + ": can't set as prototype!");
@@ -44828,7 +44829,7 @@ module.exports = Object.is || function is(x, y){
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
-var anObject  = __webpack_require__(10)
+var anObject  = __webpack_require__(11)
   , aFunction = __webpack_require__(26)
   , SPECIES   = __webpack_require__(2)('species');
 module.exports = function(O, D){
@@ -47790,7 +47791,7 @@ module.exports = __webpack_require__(130);
 /* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject = __webpack_require__(10)
+var anObject = __webpack_require__(11)
   , get      = __webpack_require__(49);
 module.exports = __webpack_require__(5).getIterator = function(it){
   var iterFn = get(it);
@@ -48164,7 +48165,7 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var Component = __webpack_require__(11)(
+var Component = __webpack_require__(10)(
   /* script */
   __webpack_require__(135),
   /* template */
@@ -48176,7 +48177,7 @@ var Component = __webpack_require__(11)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/node_modules/vue2-google-maps/dist/components/infoWindow.vue"
+Component.options.__file = "/home/johndoe/Code/Valet/tranvas/node_modules/vue2-google-maps/dist/components/infoWindow.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] infoWindow.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -48347,7 +48348,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(138)
 }
-var Component = __webpack_require__(11)(
+var Component = __webpack_require__(10)(
   /* script */
   __webpack_require__(141),
   /* template */
@@ -48359,7 +48360,7 @@ var Component = __webpack_require__(11)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/node_modules/vue2-google-maps/dist/components/map.vue"
+Component.options.__file = "/home/johndoe/Code/Valet/tranvas/node_modules/vue2-google-maps/dist/components/map.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] map.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -48682,7 +48683,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(144)
 }
-var Component = __webpack_require__(11)(
+var Component = __webpack_require__(10)(
   /* script */
   __webpack_require__(146),
   /* template */
@@ -48694,7 +48695,7 @@ var Component = __webpack_require__(11)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue"
+Component.options.__file = "/home/johndoe/Code/Valet/tranvas/node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] streetViewPanorama.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -48944,7 +48945,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var Component = __webpack_require__(11)(
+var Component = __webpack_require__(10)(
   /* script */
   __webpack_require__(149),
   /* template */
@@ -48956,7 +48957,7 @@ var Component = __webpack_require__(11)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/node_modules/vue2-google-maps/dist/components/placeInput.vue"
+Component.options.__file = "/home/johndoe/Code/Valet/tranvas/node_modules/vue2-google-maps/dist/components/placeInput.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] placeInput.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49122,7 +49123,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var Component = __webpack_require__(11)(
+var Component = __webpack_require__(10)(
   /* script */
   __webpack_require__(152),
   /* template */
@@ -49134,7 +49135,7 @@ var Component = __webpack_require__(11)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/node_modules/vue2-google-maps/dist/components/autocomplete.vue"
+Component.options.__file = "/home/johndoe/Code/Valet/tranvas/node_modules/vue2-google-maps/dist/components/autocomplete.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] autocomplete.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49292,7 +49293,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var Component = __webpack_require__(11)(
+var Component = __webpack_require__(10)(
   /* script */
   __webpack_require__(155),
   /* template */
@@ -49304,7 +49305,7 @@ var Component = __webpack_require__(11)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/resources/assets/js/components/Example.vue"
+Component.options.__file = "/home/johndoe/Code/Valet/tranvas/resources/assets/js/components/Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49390,7 +49391,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var Component = __webpack_require__(11)(
+var Component = __webpack_require__(10)(
   /* script */
   __webpack_require__(158),
   /* template */
@@ -49402,7 +49403,7 @@ var Component = __webpack_require__(11)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/resources/assets/js/components/EventLocation.vue"
+Component.options.__file = "/home/johndoe/Code/Valet/tranvas/resources/assets/js/components/EventLocation.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] EventLocation.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49579,6 +49580,83 @@ if (false) {
 
 /***/ }),
 /* 160 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(10)(
+  /* script */
+  __webpack_require__(161),
+  /* template */
+  __webpack_require__(162),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/home/johndoe/Code/Valet/tranvas/resources/assets/js/components/EventRegistration.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] EventRegistration.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-53f6ae7e", Component.options)
+  } else {
+    hotAPI.reload("data-v-53f6ae7e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 161 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: ['text', 'mode', 'eventId']
+});
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "EventRegistration__wrapper"
+  }, [_c('button', {
+    staticClass: "btn",
+    class: _vm.mode
+  }, [_vm._v(_vm._s(_vm.text))])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-53f6ae7e", module.exports)
+  }
+}
+
+/***/ }),
+/* 163 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
