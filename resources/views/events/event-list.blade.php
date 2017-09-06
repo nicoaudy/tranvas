@@ -11,6 +11,7 @@
         </h1>
 
         @foreach($upcomingEvents as $upcoming)
+            {{ dump($upcoming->toArray()) }}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-heading">
