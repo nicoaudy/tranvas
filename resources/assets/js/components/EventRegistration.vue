@@ -1,6 +1,6 @@
 <template>
 	<div class="EventRegistration__wrapper">
-		<button class="btn" v-bind:class="mode" v-on:click="handleRegistration">{{text}}</button>
+		<button class="btn" v-bind:class="buttonMode" v-on:click="handleRegistration">{{buttonText}}</button>
 	</div>
 </template>
 
@@ -10,6 +10,16 @@
 	export default {
 		props: ['text', 'mode', 'eventId'],
 
+	    created () {
+	      this.buttonText = this.text
+	      this.buttonMode = this.mode
+	    },
+	    data () {
+	      return {
+	        buttonText: '',
+	        buttonMode: ''
+	      }
+	    },
 		methods: {
 			handleRegistration () {
 	        let postData = {
@@ -18,6 +28,14 @@
 	        axios.post(registrationUrl, postData)
 		        .then(response => {
 		        	console.log('response', response)
+		            if (response.status == 200) {
+		              this.buttonText = 'Register'
+		              this.buttonMode = 'btn-primary'
+		            }
+		            if (response.status == 201) {
+		              this.buttonText = 'Unregister'
+		              this.buttonMode = 'btn-success'
+		            }
 		        })
 	      	}
 	    }

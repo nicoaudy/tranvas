@@ -48177,7 +48177,7 @@ var Component = __webpack_require__(10)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/johndoe/Code/Valet/tranvas/node_modules/vue2-google-maps/dist/components/infoWindow.vue"
+Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/node_modules/vue2-google-maps/dist/components/infoWindow.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] infoWindow.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -48360,7 +48360,7 @@ var Component = __webpack_require__(10)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/johndoe/Code/Valet/tranvas/node_modules/vue2-google-maps/dist/components/map.vue"
+Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/node_modules/vue2-google-maps/dist/components/map.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] map.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -48695,7 +48695,7 @@ var Component = __webpack_require__(10)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/johndoe/Code/Valet/tranvas/node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue"
+Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] streetViewPanorama.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -48957,7 +48957,7 @@ var Component = __webpack_require__(10)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/johndoe/Code/Valet/tranvas/node_modules/vue2-google-maps/dist/components/placeInput.vue"
+Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/node_modules/vue2-google-maps/dist/components/placeInput.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] placeInput.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49135,7 +49135,7 @@ var Component = __webpack_require__(10)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/johndoe/Code/Valet/tranvas/node_modules/vue2-google-maps/dist/components/autocomplete.vue"
+Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/node_modules/vue2-google-maps/dist/components/autocomplete.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] autocomplete.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49305,7 +49305,7 @@ var Component = __webpack_require__(10)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/johndoe/Code/Valet/tranvas/resources/assets/js/components/Example.vue"
+Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/resources/assets/js/components/Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49403,7 +49403,7 @@ var Component = __webpack_require__(10)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/johndoe/Code/Valet/tranvas/resources/assets/js/components/EventLocation.vue"
+Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/resources/assets/js/components/EventLocation.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] EventLocation.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49595,7 +49595,7 @@ var Component = __webpack_require__(10)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/johndoe/Code/Valet/tranvas/resources/assets/js/components/EventRegistration.vue"
+Component.options.__file = "/Users/Mac/Playground/Valet/tranvas/resources/assets/js/components/EventRegistration.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] EventRegistration.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -49637,13 +49637,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['text', 'mode', 'eventId'],
 
+  created: function created() {
+    this.buttonText = this.text;
+    this.buttonMode = this.mode;
+  },
+  data: function data() {
+    return {
+      buttonText: '',
+      buttonMode: ''
+    };
+  },
+
   methods: {
     handleRegistration: function handleRegistration() {
+      var _this = this;
+
       var postData = {
         eventId: this.eventId
       };
       axios.post(__WEBPACK_IMPORTED_MODULE_0__env_js__["a" /* registrationUrl */], postData).then(function (response) {
         console.log('response', response);
+        if (response.status == 200) {
+          _this.buttonText = 'Register';
+          _this.buttonMode = 'btn-primary';
+        }
+        if (response.status == 201) {
+          _this.buttonText = 'Unregister';
+          _this.buttonMode = 'btn-success';
+        }
       });
     }
   }
@@ -49669,11 +49690,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "EventRegistration__wrapper"
   }, [_c('button', {
     staticClass: "btn",
-    class: _vm.mode,
+    class: _vm.buttonMode,
     on: {
       "click": _vm.handleRegistration
     }
-  }, [_vm._v(_vm._s(_vm.text))])])
+  }, [_vm._v(_vm._s(_vm.buttonText))])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
