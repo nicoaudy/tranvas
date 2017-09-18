@@ -7,6 +7,7 @@ use App\Modules\Event\Event;
 use App\Modules\Event\Participant;
 use Illuminate\Support\Facades\Auth;
 use App\Repositories\AbstractRepository;
+use App\Modules\Event\Events\EventRegistered;
 use App\Modules\Event\Repositories\EventsRepository;
 
 class EloquentEvents extends AbstractRepository implements EventsRepository
@@ -27,7 +28,7 @@ class EloquentEvents extends AbstractRepository implements EventsRepository
 
         return $this->model->select($select)
         ->from('events as e')
-        ->leftJoin('participants as p', function($query) {
+        ->leftJoin('participants as p', function ($query) {
             $query->on('p.event_id', '=', 'e.id');
             $query->where('p.user_id', Auth::user()->id);
         })
@@ -49,7 +50,9 @@ class EloquentEvents extends AbstractRepository implements EventsRepository
             'event_id'   => $event->id,
             'user_id'    => Auth::user()->id,
         ]);
-        
+
+        event(new EventRegistered($event, Auth::user()));
+
         return true;
     }
 
