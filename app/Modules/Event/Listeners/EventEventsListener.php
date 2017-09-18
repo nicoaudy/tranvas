@@ -3,6 +3,7 @@
 namespace App\Modules\Event\Listeners;
 
 use App\Modules\Event\Events\EventRegistered;
+use App\Modules\Event\Jobs\RegistrationConfirmationEmail;
 
 class EventEventsListener
 {
@@ -14,8 +15,6 @@ class EventEventsListener
 
     public function handleEventRegistered(EventRegistered $eventRegistered)
     {
-        $username   = $eventRegistered->user->name;
-        $eventId    = $eventRegistered->event->id;
-        \Log::info("{$username} has registered for event {$eventId}");
+        dispatch(new RegistrationConfirmationEmail($eventRegistered->event, $eventRegistered->user));
     }
 }
