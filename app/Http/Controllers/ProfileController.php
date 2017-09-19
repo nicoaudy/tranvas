@@ -21,6 +21,8 @@ class ProfileController extends Controller
 
         $user = Auth::user();
         $user->name = $request->name;
+        $user->lat = $request->lat;
+        $user->lng = $request->lng;
         $user->save();
 
         return redirect()->back();

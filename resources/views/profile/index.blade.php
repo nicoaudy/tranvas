@@ -26,6 +26,11 @@
                             <input type="email" name="email" id="email" class="form-control" value="{{ old('email', $user->email) }}" disabled>
                         </div>
                         <div class="form-group">
+                            <event-location lat="{{ $user->lat }}"
+                                            lng="{{ $user->lng }}">
+                            </event-location>
+                        </div>
+                        <div class="form-group">
                             <br>
                             <button class="btn btn-primary">
                                 Save <i class="fa fa-upload"></i>

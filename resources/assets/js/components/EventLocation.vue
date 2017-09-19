@@ -3,7 +3,7 @@
 		<label for="location">Location</label>
         <div id="location">
             <gmap-autocomplete @place_changed="setPlace"></gmap-autocomplete>
-            <gmap-map :center="location" :zoom="7" style="width: 500px; height: 300px;">
+            <gmap-map :center="location" :zoom="7" style="width: 100%; height: 300px;">
                 <gmap-marker
                   :position="location"
                   :clickable="true"
@@ -21,7 +21,14 @@
 
 <script>
 export default {
-    data() {
+    props: ['lat', 'lng'],
+    created () {
+        if (this.lat != null && this.lng != null) {
+            this.location.lat = parseFloat(this.lat)
+            this.location.lng = parseFloat(this.lng)
+        }
+    },
+    data () {
         return {
             location: {
                 lat: 19.065236,

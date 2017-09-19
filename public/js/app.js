@@ -65006,6 +65006,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['lat', 'lng'],
+    created: function created() {
+        if (this.lat != null && this.lng != null) {
+            this.location.lat = parseFloat(this.lat);
+            this.location.lng = parseFloat(this.lng);
+        }
+    },
     data: function data() {
         return {
             location: {
@@ -65057,7 +65064,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('gmap-map', {
     staticStyle: {
-      "width": "500px",
+      "width": "100%",
       "height": "300px"
     },
     attrs: {
